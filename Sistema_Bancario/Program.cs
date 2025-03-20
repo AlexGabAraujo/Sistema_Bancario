@@ -17,6 +17,9 @@
             conta2P.ExibirSaldo();
             conta2P.Sacar(200);
             conta2P.ExibirSaldo();
+
+            Console.WriteLine("\nAperte 'Enter' para continuar");
+            Console.ReadLine();
         }
     }
 }
