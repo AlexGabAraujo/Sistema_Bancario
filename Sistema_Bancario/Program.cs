@@ -5,10 +5,10 @@ namespace Sistema_Bancario
 {
     public class Program
     {
-        static List<ContaBancaria> contas = new List<ContaBancaria>();
-
         static void Main(string[] args)
         {
+            public static List<ContaBancaria> contas = new List<ContaBancaria>();
+            
             try
             {
                 MostrarMenu();
