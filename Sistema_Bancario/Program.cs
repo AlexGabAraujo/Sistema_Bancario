@@ -5,7 +5,6 @@ namespace Sistema_Bancario
 {
     public class Program
     {
-
         static void Main(string[] args)
         {
             List<ContaBancaria> contas = new List<ContaBancaria>();
