@@ -1,17 +1,18 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Sistema_Bancario
 {
     public class Program
     {
+
         static void Main(string[] args)
         {
-            public static List<ContaBancaria> contas = new List<ContaBancaria>();
-            
+            List<ContaBancaria> contas = new List<ContaBancaria>();
+
             try
             {
-                MostrarMenu();
+                MostrarMenu(contas);
             }
             catch (Exception ex)
             {
@@ -19,11 +20,11 @@ namespace Sistema_Bancario
                 Console.WriteLine("\nAperte 'Enter' Para Tentar Novamente.");
                 Console.ReadLine();
                 Console.Clear();
-                MostrarMenu();
+                MostrarMenu(contas);
             }
         }
 
-        private static void MostrarMenu()
+        private static void MostrarMenu(List<ContaBancaria> contas)
         {
             int opcao;
 
@@ -50,19 +51,19 @@ namespace Sistema_Bancario
                 switch (opcao)
                 {
                     case 1:
-                        AdicionarConta();
+                        AdicionarConta(contas);
                         break;
                     case 2:
-                        RealizarDeposito();
+                        RealizarDeposito(contas);
                         break;
                     case 3:
-                        RealizarSaque();
+                        RealizarSaque(contas);
                         break;
                     case 4:
-                        ExibirTodasContas();
+                        ExibirTodasContas(contas);
                         break;
                     case 5:
-                        ProcurarConta();
+                        ProcurarConta(contas);
                         break;
                     case 6:
                         Console.WriteLine("Saindo...");
@@ -80,7 +81,7 @@ namespace Sistema_Bancario
         }
 
 
-        private static void AdicionarConta()
+        private static void AdicionarConta(List<ContaBancaria> contas)
         {
             Console.Write("Número da conta: ");
             int numero = int.Parse(Console.ReadLine());
@@ -96,7 +97,7 @@ namespace Sistema_Bancario
             Console.WriteLine("\nConta adicionada com sucesso");
         }
 
-        private static void RealizarDeposito()
+        private static void RealizarDeposito(List<ContaBancaria> contas)
         {
             Console.Write("Número da conta: ");
             int numero = int.Parse(Console.ReadLine());
@@ -113,7 +114,7 @@ namespace Sistema_Bancario
             }
         }
 
-        private static void RealizarSaque()
+        private static void RealizarSaque(List<ContaBancaria> contas)
         {
             Console.Write("Número da conta: ");
             int numero = int.Parse(Console.ReadLine());
@@ -130,7 +131,7 @@ namespace Sistema_Bancario
             }
         }
 
-        private static void ExibirTodasContas()
+        private static void ExibirTodasContas(List<ContaBancaria> contas)
         {
             if (contas.Count == 0)
             {
@@ -144,7 +145,7 @@ namespace Sistema_Bancario
             }
         }
 
-        private static void ProcurarConta()
+        private static void ProcurarConta(List<ContaBancaria> contas)
         {
             Console.Write("Número da conta: ");
             int numero = int.Parse(Console.ReadLine());
